@@ -13,6 +13,8 @@ public:
             {
                 if (ans.empty() || ans.back() != nums1[i]) {
                     ans.push_back(nums1[i]);
+                    //If ans is empty, it allows the first element from nums1 to be added to ans.
+//If the last element in ans is not the same as the current element in nums1[i], it adds the current element to ans.
                 }
                 i++;
                 j++;
