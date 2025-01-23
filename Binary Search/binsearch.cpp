@@ -51,3 +51,10 @@ int main() {
 
     return 0;
 }
+
+/*
+Recalculate mid: Since the search space (start to end) changes with every iteration, 
+you need to recalculate mid based on the new start and end values, which reflect the current segment you're searching in.
+If you don't recalculate mid, you'll be looking at the wrong position in the array, and the binary search won't work correctly.
+*/
+    
