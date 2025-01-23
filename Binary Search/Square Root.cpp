@@ -1,5 +1,6 @@
 // Given a positive integer n, find the square root of n. If n is not a perfect square, then return the floor value.
-// Floor value of any number is the greatest Integer which is less than or equal to that numberApproach 1: Use sqrt function to find square root
+// Floor value of any number is the greatest Integer which is less than or equal to that number
+//Approach 1: Use sqrt function to find square root
 /*
 class Solution {
   public:
