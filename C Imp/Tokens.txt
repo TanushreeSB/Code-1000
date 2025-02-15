@@ -1,0 +1,149 @@
+In C programming, tokens are the smallest units in a program that have meaningful representations.
+-> Tokens are the building blocks of a C program, and they are recognized by the C compiler to form valid expressions and statements. 
+-> Tokens can be classified into various categories, each with specific roles in the program.
+
+The types of C tokens are as follows:
+1) Punctuators
+2) Keywords
+3) Strings
+4) Operators
+5) Identifiers
+6) Constants
+
+ Punctuators
+The following special symbols are used in C having some special meaning and thus, cannot be used for some other purpose.
+Some of these are listed below:
+Brackets[]: Opening and closing brackets are used as array element references. These indicate single and multidimensional subscripts.
+Parentheses(): These special symbols are used to indicate function calls and function parameters.
+Braces{}: These opening and ending curly braces mark the start and end of a block of code containing more than one executable statement.
+Comma (, ): It is used to separate more than one statement like for separating parameters in function calls.
+Colon(:): It is an operator that essentially invokes something called an initialization list.
+Semicolon(;): It is known as a statement terminator.  It indicates the end of one logical entity.
+Asterisk (*): It is used to create a pointer variable and for the multiplication of variables.
+Assignment operator(=): It is used to assign values and for logical operation validation.
+Pre-processor (#): The preprocessor is a macro processor that is used automatically by the compiler to transform your program 
+before actual compilation.
+Period (.): Used to access members of a structure or union.
+Tilde(~): Bitwise One’s Complement Operator.
+
+Example:
+
+#include <stdio.h>  
+int main() {
+  
+    // '\n' is a special symbol that
+    // represents a newline
+    printf("Hello, World!\n");  
+    return 0;
+}
+
+Output
+Hello, World!
+
+2. Keywords
+Keywords are reserved words that have predefined meanings in C. These cannot be used as identifiers (variable names, function names, etc.). Keywords define the structure and behavior of the program C language supports 32 keywords some of them are:
+
+int, for, if, else, while, return, etc.
+
+
+Example:
+
+#include <stdio.h>  
+int main() {
+   
+    // 'int' is a keyword used to define
+    // variable type
+    int x = 5;  
+    printf("%d", x);
+  
+    // 'return' is a keyword used to exit
+    // main function
+    return 0;  
+}
+
+Output
+5
+Note: The number of keywords may change depending on the version of C you are using. For example, keywords present in ANSI C are 32 while in C11, it was increased to 44. Moreover, in the latest c23, it is increased to around 54.
+
+
+3. Strings
+Strings are nothing but an array of characters ended with a null character (‘\0’). This null character indicates the end of the string. Strings are always enclosed in double quotes. Whereas a character is enclosed in single quotes in C and C++.
+
+Examples:
+
+#include <stdio.h>  
+int main() {
+  
+    // "Hello, World!" is a string literal
+    char str[] = "Hello, World!";  
+    printf("%s", str);
+    return 0;
+}
+
+Output
+Hello, World!
+
+4. Operators
+Operators are symbols that trigger an action when applied to C variables and other objects. The data items on which operators act are called operands. 
+Depending on the number of operands that an operator can act upon, operators can be classified as follows: 
+
+Unary Operators: Those operators that require only a single operand to act upon are known as unary operators.For Example increment and decrement operators
+Binary Operators: Those operators that require two operands to act upon are called binary operators. Binary operators can further are classified into: 
+Arithmetic operators
+Relational Operators
+Logical Operators
+Assignment Operators
+Bitwise Operator
+Ternary Operator: The operator that requires three operands to act upon is called the ternary operator. Conditional Operator(?) is also called the ternary operator.
+
+Example:
+
+#include <stdio.h>  
+int main() {
+    int a = 10, b = 5;  
+  
+    // '+' is an arithmetic operator used
+    // for addition
+    int sum = a + b;  
+    printf("%d", sum); 
+    return 0;
+}
+
+Output
+15
+5. Identifiers
+Identifiers are names given to variables, functions, arrays, and other user-defined items. 
+They must begin with a letter (a-z, A-Z) or an underscore (_) and can be followed by letters, digits (0-9), and underscores.
+
+Example:
+
+#include <stdio.h>  
+int main() {
+  
+    // 'num' is an identifier used to name
+    // a variable
+    int num = 10;  
+    printf("%d", num); 
+    return 0;
+}
+
+Output
+10
+6. Constants
+Constants are fixed values used in a C program. These values do not change during the execution of the program. Constants can be integers, floating-point numbers, characters, or strings.
+
+Examples:
+
+#include <stdio.h>  
+int main() {
+  
+    // 'MAX_VALUE' is a constant that holds
+    // a fixed value
+    const int MAX_VALUE = 100;  
+    printf("%d", MAX_VALUE);
+    return 0;
+}
+
+Output
+100
+
