@@ -1,28 +1,36 @@
-Node* kReverse(Node* head, int k) {
-    //base call
-    if(head == NULL) {
-        return NULL;
+int getLength(Node* head) {
+    int len = 0;
+    while (head != NULL) {
+        len++;
+        head = head->next;
     }
-    
-    //step1: reverse first k nodes
-    Node* next = NULL;
-    Node* curr = head;
+    return len;
+}
+
+Node* kReverse(Node* head, int k) {
+    if (head == NULL || k <= 1) {
+        return head;
+    }
+
+    int len = getLength(head);
+    if (len < k) return head; // Don't reverse if fewer than k nodes
+
     Node* prev = NULL;
-    int count= 0;
-    
-    while( curr != NULL && count < k ) {
-        next = curr -> next;
-        curr -> next = prev;
+    Node* curr = head;
+    Node* next = NULL;
+    int count = 0;
+
+    while (curr != NULL && count < k) {
+        next = curr->next;
+        curr->next = prev;
         prev = curr;
         curr = next;
         count++;
     }
-    
-    //step2: Recursion dekhlega aage ka 
-    if(next != NULL) {
-        head -> next = kReverse(next,k);
+
+    if (next != NULL) {
+        head->next = kReverse(next, k);
     }
-    
-    //step3: return head of reversed list
+
     return prev;
 }
