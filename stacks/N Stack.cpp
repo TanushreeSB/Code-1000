@@ -80,3 +80,5 @@ public:
         return arr[index];
     }
 };
+
+// Ques: https://www.naukri.com/code360/problems/n-stacks-in-an-array_1164271
