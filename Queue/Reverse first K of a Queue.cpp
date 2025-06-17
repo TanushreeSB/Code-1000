@@ -1,3 +1,40 @@
+#include <queue>
+
+class Solution {
+  public:
+    std::queue<int> reverseFirstK(std::queue<int> q, int k) {
+        if (k <= 0 || k > q.size()) return q;
+
+        int n = q.size();
+
+        // Step 1: Push first k elements into the rear in reverse order
+        std::deque<int> temp;
+        for (int i = 0; i < k; ++i) {
+            temp.push_front(q.front());
+            q.pop();
+        }
+
+        for (int val : temp) {
+            q.push(val);
+        }
+
+        // Step 2: Move the remaining (n - k) elements to the back
+        for (int i = 0; i < n - k; ++i) {
+            q.push(q.front());
+            q.pop();
+        }
+
+        return q;
+    }
+};
+
+
+// Reverse first K of a Queue: https://www.geeksforgeeks.org/problems/reverse-first-k-elements-of-queue/1
+
+
+
+
+------------------------------------------------------------------------------
 // { Driver Code Starts
 // Initial Template for C++
 
