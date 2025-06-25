@@ -13,6 +13,11 @@ public:
         if(nums[n-1] > nums[0]){ // to check last element with first element
             count++;
         }
-        return count <= 1;
+        return count <= 1; 
+        /*
+            Which means:
+            True if the array is sorted or rotated sorted (0 or 1 drop),
+            False if the array is not valid (more than 1 drop).
+       */
       }
 };
