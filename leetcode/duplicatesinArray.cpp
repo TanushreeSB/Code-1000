@@ -25,3 +25,45 @@ public:
         return ans;
     }
 };
+
+
+**************************************************************************************************************************************************************************
+
+class Solution {
+public:
+    vector<int> findDuplicates(vector<int>& nums) {
+        unordered_set<int> seen;
+        vector<int> ans;
+
+        for (int num : nums) {
+            // If the number is already in the set, it's a duplicate
+            if (seen.count(num)) {
+                ans.push_back(num);
+            } else {
+                // Otherwise, add it to the set
+                seen.insert(num);
+            }
+        }
+
+        return ans;
+    }
+};
+
+
+**************************************************************************************************************************************************************************
+
+class Solution {
+public:
+    vector<int> findDuplicates(vector<int>& nums) {
+        sort(nums.begin(), nums.end());
+        vector<int> ans;
+
+        for (int i = 1; i < nums.size(); ++i) {
+            if (nums[i] == nums[i - 1]) {
+                ans.push_back(nums[i]);
+            }
+        }
+
+        return ans;
+    }
+};
