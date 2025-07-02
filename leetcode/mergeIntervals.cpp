@@ -38,5 +38,11 @@ If ans is empty OR the current interval does not overlap with the last interval 
 
 Otherwise, the intervals overlap, so we merge them by updating the end of the last interval in ans.
 
+intervals[i] gives you the entire i-th interval, which is a vector<int> of size 2 (e.g. [2,6]).
+
+intervals[i][0] gives you the start of the i-th interval.
+
+intervals[i][1] gives you the end of the i-th interval.
+
 
 */
