@@ -27,6 +27,9 @@ Let count = 1 (the largest element itself counts as the 1st maximum) and store m
 Traverse the sorted array backwards starting from index n-2 down to 0:
 
 Whenever nums[i] != nums[i+1], you’ve found a new distinct value, so count++.
+We use nums[i] != nums[i+1] because we’re traversing the array from the back (right to left).
+To correctly detect distinct values as we go backwards, we must compare the current value nums[i] with the next value in the sorted list,
+which is nums[i+1].
 
 As soon as count == 3, return nums[i] (the 3rd distinct maximum).
 
