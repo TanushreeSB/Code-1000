@@ -2,4 +2,4 @@
 
 cs-resources: 
   1) OOPS: https://whimsical.com/object-oriented-programming-cheatsheet-by-love-babbar-YbSgLatbWQ4R5paV7EgqFw
-  2) 
+  2) MySQL: https://leetcode.com/problem-list/ntujtie1/
