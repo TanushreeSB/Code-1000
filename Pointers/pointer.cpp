@@ -26,7 +26,24 @@ int main () {
     cout << " size of pointer is " << sizeof(ptr) << endl; //  8
     cout << " size of pointer is " << sizeof(p2) << endl; // 8
 
+    //pointer to int is created, and pointing to some garbage address
+    //int *p = 0; 
 
+    //cout << *p << endl;
+
+    /*
+    int i = 5;
+
+    int *q = &i;
+    cout << q << endl; 
+    cout << *q << endl; output:5
+
+    int *p = 0;
+    p = &i;
+
+    cout << p << endl;
+    cout << *p << endl; output:5
+    */
 
     return 0;
 }
