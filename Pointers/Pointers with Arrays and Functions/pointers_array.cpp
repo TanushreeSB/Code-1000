@@ -16,3 +16,7 @@ int main () {
     cout << "7th " << *(arr) + 1 << endl; // 24
     cout << "8th " << arr[2] << endl; // 41
     cout << "9th " << *(arr+2) << endl; // 41
+
+    int i = 3;
+    cout << i[arr] << endl; // 67
+
