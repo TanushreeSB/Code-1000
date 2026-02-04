@@ -15,7 +15,7 @@ void update(int *p) {
 
 }
 
-int getSum(int *arr, int n) {
+int getSum(int *arr, int n) { // int *arr means the function is working directly with the memory address of the array’s first element, and array indexing is just pointer arithmetic.i.e here *arr same as arr[]
 
     cout << endl << "Size : " << sizeof(arr) << endl;
 
