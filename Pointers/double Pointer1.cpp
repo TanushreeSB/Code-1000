@@ -1,0 +1,51 @@
+#include<iostream>
+using namespace std;
+
+void update(int **p2) {
+    //p2 = p2 + 1;
+    //kuch change hoga  - NO
+
+    //*p2 = *p2 + 1;
+    //kuch change hoga - YES ( value of p updates)
+
+    **p2 = **p2 + 1;
+    //kuch change hoga - YES ( value of i changes )
+}
+    void update(int *p){
+        *p = (*p)  *  2;
+    }
+        void increment(int **p){
+        ++(**p);
+    }
+int main() {
+/*
+    int i = 5;
+    int* p = &i;
+    int** p2 = &p;
+
+    cout<< endl << endl <<" Sab sahi chal rha h " << endl << endl ;
+
+    cout << i << endl; 5
+    cout << *p << endl; 5
+    cout << **p2 << endl; 5
+
+    cout << &i << endl; 0x7ffeb64399d4
+    cout << p << endl; 0x7ffeb64399d4
+    cout << *p2 << endl; 0x7ffeb64399d4
+
+    cout << &p << endl; 0x7ffeb64399c8
+    cout << p2 << endl; 0x7ffeb64399c8
+
+    cout << endl << endl;
+    cout<< "before " << i << endl; 
+    cout<< "before " << p << endl;
+    cout<< "before " << p2 << endl;
+    update(p2);
+    cout<< "after " << i << endl;
+    cout<< "after " << p << endl;
+    cout<< "after " << p2 << endl;
+    cout << endl << endl;
+    */
+
+   return 0;
+}
