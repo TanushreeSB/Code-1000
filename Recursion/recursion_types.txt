@@ -1,0 +1,230 @@
+Types of Recursion in C++
+
+Recursion in C++ can be classified based on how and where function calls occur:
+
+
+ 1. Direct Recursion
+
+A function directly calls itself inside its own body.
+
+### Example
+
+```cpp
+#include <iostream>
+using namespace std;
+
+void show(int n) {
+    if (n == 0)
+        return;
+
+    cout << n << " ";
+
+    // Direct recursive call
+    show(n - 1);
+}
+
+int main() {
+    show(5);
+    return 0;
+}
+```
+
+Output
+
+```
+5 4 3 2 1
+```
+
+-
+
+Direct recursion is further divided into:
+
+ A. Head Recursion
+
+The recursive call happens before any processing.
+
+```cpp
+#include <iostream>
+using namespace std;
+
+void head(int n) {
+    if (n != 0) {
+        // Recursive call first
+        head(n - 1);
+    }
+    cout << n << " ";
+}
+
+int main() {
+    head(5);
+    return 0;
+}
+```
+
+Output
+
+```
+0 1 2 3 4 5
+```
+
+🔹 Execution goes deep first, processing happens while returning.
+
+
+
+B. Tail Recursion
+
+The recursive call is the last statement in the function.
+
+```cpp
+#include <iostream>
+using namespace std;
+
+void tail(int n) {
+    if (n == 0)
+        return;
+
+    cout << n << " ";
+
+    // Recursive call at the end
+    tail(n - 1);
+}
+
+int main() {
+    tail(5);
+    return 0;
+}
+```
+
+Output
+
+```
+5 4 3 2 1
+```
+
+🔹 Often more memory-efficient
+🔹 May be optimized by the compiler (Tail Call Optimization)
+
+---
+
+C. Tree Recursion
+
+A function calls itself more than once, forming a tree-like call structure.
+
+```cpp
+#include <iostream>
+using namespace std;
+
+void tree(int n) {
+    if (n == 0)
+        return;
+
+    cout << n << " ";
+
+    // Two recursive calls
+    tree(n - 1);
+    tree(n - 1);
+}
+
+int main() {
+    tree(3);
+    return 0;
+}
+```
+
+Output
+
+```
+3 2 1 1 2 1 1
+```
+
+🔹 Number of calls grows exponentially
+
+---
+
+### 🧩 D. Nested Recursion
+
+The argument to a recursive function is another recursive call.
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int nested(int n) {
+    if (n > 100)
+        return n - 10;
+
+    // Recursive call inside recursive call
+    return nested(nested(n + 11));
+}
+
+int main() {
+    cout << nested(95);
+    return 0;
+}
+```
+
+Output
+
+```
+91
+```
+
+🔹 Complex and rarely used
+🔹 Famous example: **McCarthy 91 Function**
+
+
+
+2. Indirect Recursion
+
+A function does **not call itself directly**, but calls another function that eventually calls it back.
+
+### Example
+
+```cpp
+#include <iostream>
+using namespace std;
+
+void funcA(int);
+void funcB(int);
+
+void funcA(int n) {
+    if (n > 0) {
+        cout << n << " ";
+        funcB(n - 1);
+    }
+}
+
+void funcB(int n) {
+    if (n > 0) {
+        cout << n << " ";
+        funcA(n / 2);
+    }
+}
+
+int main() {
+    funcA(10);
+    return 0;
+}
+```
+
+Output
+
+```
+10 9 4 3 1
+```
+
+🔹 Creates a cycle of function calls
+
+
+
+Summary Table:
+
+| Type     |     Description                         |
+| -------- | ----------------------------------------|
+| Direct   | Function calls itself directly          |
+| Head     | Recursive call happens first            |
+| Tail     | Recursive call happens last             |
+| Tree     | Function makes multiple recursive calls |
+| Nested   | Recursive call used as argument         |
+| Indirect | Functions call each other in a loop     |
+
