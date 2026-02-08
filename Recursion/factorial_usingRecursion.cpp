@@ -1,10 +1,14 @@
+/* 
+Recursion is a programming technique where a function calls itself repeatedly until a specific base condition is met.
+A function that performs such self-calling behavior is known as a recursive function, and each instance of the function calling itself is called a recursive call. */
+
 #include<iostream>
 using namespace std;
 
 unsigned int fact(unsigned int n){
-    if(n == 0)
+    if(n == 0) // base case
         return 1;
-    return n * fact(n - 1);
+    return n * fact(n - 1); // recursive case
     
 }
 
