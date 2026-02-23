@@ -82,3 +82,6 @@ int main() {
 
     return 0;
 }
+
+// T.C: O(nlogn)
+// S.C: O(n), recursive merge sort
